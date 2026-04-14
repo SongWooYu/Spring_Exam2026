@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <h3>회원 가입 결과</h3>
+        <p>아이디 : <span th:text="${member.id}" /></p>
+        <p>비밀번호 : <span th:text="${member.passwd}" /></p>
+        <p> 거주지 : <span th:text="${member.city}" /></p>
+        <p>성별 : <span th:text="${member.gender}" /></p>
+        <p>취미 : <span th:each="hobby : ${member.hobby}" th:text="${hobby} + ' | '" /></p>
+        <p>가입인사 : <span th:text="${member.greetings}" /></p>
+
+</body>
+</html>
