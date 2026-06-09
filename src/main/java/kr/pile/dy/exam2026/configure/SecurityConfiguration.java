@@ -20,9 +20,9 @@ public class SecurityConfiguration {
     SecurityFilterChain examMethod01(HttpSecurity http) {
         http.authorizeHttpRequests(
                 authorize -> authorize
-                        .requestMatchers("/member/**").hasAnyRole("USER", "ADMIN")
-                        .requestMatchers("/manager/**").hasRole("MANAGER")
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/exam10_01/member/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/exam10_01/manager/**").hasRole("MANAGER")
+                        .requestMatchers("/exam10_01/admin/**").hasRole("ADMIN")
                         .anyRequest().permitAll()
         ).formLogin(Customizer.withDefaults());
         return http.build();
@@ -50,7 +50,7 @@ public class SecurityConfiguration {
                 .password(passwordEncoder().encode("a1234"))
                 .roles("ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager();
+        return new InMemoryUserDetailsManager(user, manager, admin);
     }
 }
 
