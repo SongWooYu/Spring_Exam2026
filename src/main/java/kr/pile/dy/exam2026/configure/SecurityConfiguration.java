@@ -52,5 +52,6 @@ public class SecurityConfiguration {
                 .build();
         return new InMemoryUserDetailsManager(user, manager, admin);
     }
+
 }
 
