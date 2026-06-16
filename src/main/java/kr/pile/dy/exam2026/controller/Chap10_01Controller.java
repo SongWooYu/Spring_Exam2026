@@ -83,4 +83,17 @@ public class Chap10_01Controller {
         return "viewPage10_04";
     }
 
+    @GetMapping("/exam05")
+    public String requestMethod12(Model model) {
+        return "viewPage10_05";
+    }
+    @GetMapping("/admin")
+    public String requestMethod13(Authentication user, Model model) {
+        model.addAttribute("username", user.getName());
+        return "viewPage10_05_result";
+    }
+    @GetMapping("/logout")
+    public String requestMethod14(Model model) {
+        return "viewPage10_05";
+    }
 }
